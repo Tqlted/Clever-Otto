@@ -51,6 +51,8 @@ hr {
     border-radius:15px;
     border:5px solid;
     transition-duration:200ms;
+    border-color: black;
+    color: black;
 }
 
 #play:hover {
