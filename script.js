@@ -109,11 +109,12 @@ function clickPoint(point) {
                 updateScore();
                 startRound();
                 }, 500);
+            } else {
+                playing = true;
             }
         } else {
             lose();
         }
-        playing = true;
     }
 }
 
@@ -155,8 +156,8 @@ function changeGridSize(type) {
     else if(type.which == 3) {
         gz--;
     }
-    if(gz < 2) gz = 2;
-    if (gz > 10) gz = 10;
+    if(gz < 2) gz = 10;
+    if (gz > 10) gz = 2;
     localStorage.setItem("gridSize", "" +gz);
     updateGridOption();
 }
