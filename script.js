@@ -96,9 +96,9 @@ function highlightPoint(point) {
 function clickPoint(point) {
     if (playing === true) {
         playing = false;
-        highlightPoint(point);
         const rightPoint = points[currentPoint];
         if ("" + rightPoint == point) {
+            highlightPoint(point);
             console.log(rightPoint + " == " + point);
             currentPoint++;
             updateScore();
@@ -119,6 +119,7 @@ function clickPoint(point) {
 }
 
 function lose() {
+    highlightAudio.pause();
     failAudio.play();
     alert("You lost!\nScore: " + score);
     window.location.href="index.html";
